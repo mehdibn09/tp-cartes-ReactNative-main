@@ -1,0 +1,93 @@
+import React from 'react';
+import { View, Text, Image, TouchableOpacity, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+
+const App = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        <View style={styles.card}>
+          <Image
+            source={{ uri: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800' }}
+            style={styles.image}
+            resizeMode="cover"
+          />
+          <View style={styles.titlePriceRow}>
+            <Text style={styles.title}>Baskets Vintage</Text>
+            <Text style={styles.price}>89,99 €</Text>
+          </View>
+          <Text style={styles.description}>
+            Description offrant comprenant plusieurs
+          </Text>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Acheter maintenant</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#e0e0e0',
+  },
+  scrollContent: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  card: {
+    backgroundColor: '#ffffff',
+    borderRadius: 15,
+    padding: 20,
+    width: 320,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 5,
+  },
+  image: {
+    width: '100%',
+    height: 180,
+    borderRadius: 10,
+    marginBottom: 15,
+  },
+  titlePriceRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  price: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#e53935',
+  },
+  description: {
+    fontSize: 13,
+    color: '#757575',
+    marginBottom: 15,
+    lineHeight: 18,
+  },
+  button: {
+    backgroundColor: '#4caf50',
+    paddingVertical: 14,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+});
+
+export default App;
